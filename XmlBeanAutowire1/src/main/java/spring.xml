@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   
+   
+	<bean id="stu" class="com.XmlBeanAutowire1.Student" autowire="byName">
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<constructor-arg type="String" value="Nishant"></constructor-arg>
+	</bean>
+	
+	<bean name="boy2" class="com.XmlBeanAutowire1.Boy">
+		<constructor-arg type="int" value="19"></constructor-arg>
+	</bean>
+	
+	<bean name="boy1" class="com.XmlBeanAutowire1.Boy" >
+		<constructor-arg type="int" value="70"></constructor-arg>
+	</bean>
+	
+	
+</beans>

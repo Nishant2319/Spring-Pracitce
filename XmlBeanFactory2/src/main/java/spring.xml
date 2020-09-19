@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   
+   
+	<bean id="stu" class="com.XmlBeanFactory2.Student" depends-on="Bo">
+
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<constructor-arg type="String" value="Nishant"></constructor-arg>
+		<property name="b" ref="Bo"></property>
+	</bean>
+	
+	<bean name="Bo" factory-bean="boycreate" factory-method="boyFactory">
+	</bean>
+	<bean name="boycreate" class="com.XmlBeanFactory2.BoyFactory"></bean>
+	
+</beans>

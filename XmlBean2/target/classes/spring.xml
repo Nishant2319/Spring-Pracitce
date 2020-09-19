@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   
+   
+	<bean id="stu" class="com.XmlBean2.Student" depends-on="Bo" >
+
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<constructor-arg type="String" value="Nishant"></constructor-arg>
+		<property name="b" ref="bo"></property>
+	</bean>
+	
+	<bean name="Bo" class="com.XmlBean2.Boy" scope="prototype">
+		<constructor-arg type="int" value="19"></constructor-arg>
+	</bean>
+	
+	<alias name="Bo" alias="bo"/>
+</beans>
